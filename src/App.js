@@ -9,6 +9,8 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import logo from "./assets/logo.png";
 import { useState } from "react";
+import { createTheme } from "@mui/material";
+import { ThemeProvider } from "styled-components";
 
 function App() {
   const [activeStep, setActiveStep] = useState(0);
@@ -20,6 +22,7 @@ function App() {
     else if (step === 2) return <Configuration stepfn={handleNext} />;
     else if (step === 3) return <Launch stepfn={handleNext} name={name} />;
   };
+  const theme = createTheme({typography: {fontSize: 60}});
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -32,10 +35,12 @@ function App() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          gap: "4rem"
         }}
       >
         <img src={logo}></img>
-        <Box sx={{ width: "40%"}}>
+        <Box sx={{ width: "30%"}}>
+        <ThemeProvider theme={theme}>
           <Stepper activeStep={activeStep} alternativeLabel>
             {steps.map((label, index) => (
               <Step key={index}>
@@ -43,6 +48,7 @@ function App() {
               </Step>
             ))}
           </Stepper>
+          </ThemeProvider>
         </Box>
         <div>{getStepContent(activeStep)}</div>
       </Box>

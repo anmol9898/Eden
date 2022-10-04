@@ -81,7 +81,7 @@ const Configuration = (props) => {
         <Typography paragraph align="center" size="medium" color="#64708A">
           We'll streamline your setup experience accordingly.
         </Typography>
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 ,marginTop:"4rem"}}>
           <Grid container spacing={2}>
             <Grid item xs={6} md={6}>
               <Item>
