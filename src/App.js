@@ -39,7 +39,7 @@ function App() {
         }}
       >
         <img src={logo}></img>
-        <Box sx={{ width: "30%"}}>
+        <Box sx={{ width: "640px"}}>
         <ThemeProvider theme={theme}>
           <Stepper activeStep={activeStep} alternativeLabel>
             {steps.map((label, index) => (
