@@ -1,20 +1,23 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { Typography, Avatar } from "@mui/material";
-import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+// import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+import DoneIcon from '@mui/icons-material/Done';
 
 const Launch = (props) => {
   return (
     <>
-      <Box>
+      <Box
+       sx={{ display: "flex", flexDirection: "column", alignItems: "center" , gap:"1rem" }}
+      >
         {/* check avatar */}
-        <Avatar >
-          <CheckCircleRoundedIcon sx={{fill:'success'}}/>
+        <Avatar sx={{marginTop:"8rem"}}>
+          <DoneIcon sx={{fill:'success'}}/>
         </Avatar>
-        <Typography paragraph align="center" fontSize="2rem" fontWeight={700}>
+        <Typography paragraph align="center" fontSize="2rem" fontWeight={700} sx={{marginTop:"2rem"}}>
           Congratulations {props.name}
         </Typography>
-        <Typography paragraph align="center" size="medium" color="#64708A">
+        <Typography paragraph align="center" size="medium" color="#64708A" sx={{marginTop:"0rem" , mb:"0rem"}}>
           You have completed onboarding, you can start using the Eden!
         </Typography>
         <Button

@@ -1,0 +1,11 @@
+.myButton{
+    background: transparent;
+    border: none;
+    z-index: 100;
+    cursor:pointer
+}
+
+.myButton:hover,.myButton:active{
+    border:1px solid var(--base)!important;
+    box-shadow: 10px 10px  rgba(#664DE5);
+}

@@ -1,6 +1,5 @@
 import "./App.css";
 import Box from "@mui/material/Box";
-import Head from "./components/head/Head";
 import Name from "./components/body/Name";
 import Configuration from "./components/body/Configuration";
 import Workspace from "./components/body/Workspace";
@@ -15,9 +14,6 @@ function App() {
   const [activeStep, setActiveStep] = useState(0);
   const [name, setName] = useState("Eren");
   const steps = ["", "", "", ""];
-  const getNumberOfSteps = () => {
-    return 4;
-  };
   const getStepContent = (step) => {
     if (step === 0) return <Name stepfn={handleNext} nameSet={setName} />;
     else if (step === 1) return <Workspace stepfn={handleNext} />;
@@ -39,13 +35,7 @@ function App() {
         }}
       >
         <img src={logo}></img>
-
-        <Box
-          sx={{ width: "40%" }}
-          // sm={{ width: "60%" }}
-          // lg={{ width: "60%" }}
-          // md={{ width: "40%" }}
-        >
+        <Box sx={{ width: "40%"}}>
           <Stepper activeStep={activeStep} alternativeLabel>
             {steps.map((label, index) => (
               <Step key={index}>
