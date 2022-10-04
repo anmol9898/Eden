@@ -50,9 +50,13 @@ const Configuration = (props) => {
         <Typography paragraph align="center" fontSize="2rem" fontWeight={700}>
           {tiers[0].title}
         </Typography>
-        <Typography paragraph align="center" size="medium" color="#64708A">
-          {tiers[0].description.join(" ")}
-        </Typography>
+        {tiers[0].description.map((it) => {
+          return (
+            <Typography paragraph align="center" size="medium" color="#64708A">
+              {it}
+            </Typography>
+          );
+        })}
       </Box>
     </>
   );
@@ -65,9 +69,13 @@ const Configuration = (props) => {
         <Typography paragraph align="center" fontSize="2rem" fontWeight={700}>
           {tiers[1].title}
         </Typography>
-        <Typography paragraph align="center" size="medium" color="#64708A">
-          {tiers[1].description.join(" ")}
-        </Typography>
+        {tiers[1].description.map((it) => {
+          return (
+            <Typography paragraph align="center" size="medium" color="#64708A">
+              {it}
+            </Typography>
+          );
+        })}
       </Box>
     </>
   );
@@ -81,7 +89,7 @@ const Configuration = (props) => {
         <Typography paragraph align="center" size="medium" color="#64708A">
           We'll streamline your setup experience accordingly.
         </Typography>
-        <Box sx={{ flexGrow: 1 ,marginTop:"4rem"}}>
+        <Box sx={{ flexGrow: 1, marginTop: "4rem" }}>
           <Grid container spacing={2}>
             <Grid item xs={6} md={6}>
               <Item>
